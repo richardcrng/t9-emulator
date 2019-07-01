@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /**
  * Converts a given numeric string into an array of T9 predictive text matches
  * 
@@ -5,7 +7,18 @@
  * @return {String[]} An array of predictive text matches
  */
 function getT9Predictions(numericString) {
-  return null
+  const inputNums = numericString.split('')
+  return inputNums.reduce(
+    (accumulatedPredictions, currentInputNum) => {
+      return _.flatMap(
+        accumulatedPredictions,
+        prediction => {
+          // something here
+        }
+      )
+    },
+    []
+  )
 }
 
 export default getT9Predictions;

@@ -1,3 +1,8 @@
+/**
+ * Maps a key to its T9 letters
+ * @constant
+ * @type {Object.<String[]>}
+ */
 export const T9_HASH = {
   2: ['a', 'b', 'c'],
   3: ['d', 'e', 'f'],
