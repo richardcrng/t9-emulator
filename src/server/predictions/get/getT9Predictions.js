@@ -21,4 +21,23 @@ const getT9Predictions = numericString => {
   )
 }
 
+/**
+ * 
+ * @param {String[]} lettersArr - Next possible letters
+ * @param {String} prediction - Word / prediction
+ * @return {String[]} Array of predictions augmented from prediction via lettersArr 
+ */
+const augmentPrediction = (lettersArr, prediction) => {
+  return lettersArr.reduce(
+    (accumulatedPredictions, letter) => {
+      return [...accumulatedPredictions, `${prediction}${letter}`]
+    },
+    []
+  )
+}
+
 export default getT9Predictions;
+
+export {
+  augmentPrediction
+}
