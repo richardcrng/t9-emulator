@@ -1,15 +1,15 @@
 import React from 'react';
 import classes from './Key.module.css';
 
-function Key({ n, letters }) {
+function Key({ main, detail }) {
   return (
     <button className={classes.KeyOuter}>
       <span className={classes.KeyInner}>
         <span>
-          {n}
+          {main}
         </span>
         <span>
-          {letters}
+          {detail}
         </span>
       </span>
     </button>

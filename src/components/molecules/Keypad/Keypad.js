@@ -7,19 +7,24 @@ function Keypad() {
   return (
     <div className={classes.Keypad}>
       <KeyRow>
-        <Key n={1} />
-        <Key n={2} />
-        <Key n={3} />
+        <Key main={1} />
+        <Key main={2} />
+        <Key main={3} />
       </KeyRow>
       <KeyRow>
-        <Key n={4} />
-        <Key n={5} />
-        <Key n={6} />
+        <Key main={4} />
+        <Key main={5} />
+        <Key main={6} />
       </KeyRow>
       <KeyRow>
-        <Key n={7} />
-        <Key n={8} />
-        <Key n={9} />
+        <Key main={7} />
+        <Key main={8} />
+        <Key main={9} />
+      </KeyRow>
+      <KeyRow>
+        <Key main='*' />
+        <Key main={0} />
+        <Key main='#' />
       </KeyRow>
     </div>
   )
