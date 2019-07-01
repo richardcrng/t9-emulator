@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Phone from './components/organisms/Phone';
 import { T9_HASH } from './constants';
 import { actions } from './redux/leaves';
+import { processKeyClick } from './redux/saga';
 
 function App() {
   const dispatch = useDispatch()
@@ -14,6 +15,7 @@ function App() {
     if (associatedLetters) {
       dispatch(actions.numericString.create.concat(`${key}`))      
     }
+    dispatch(processKeyClick.trigger(key))
   }
 
   return (
