@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Display() {
+function Display({ numericString = '4324', wordsArr = ['sample', 'words'] }) {
   return (
     <div
       style={{
@@ -9,7 +9,8 @@ function Display() {
         height: '200px'
       }}
     >
-      f
+      <p>Input: {numericString}</p>
+      <p>Words: {wordsArr.join(', ')}</p>
     </div>
   )
 }
