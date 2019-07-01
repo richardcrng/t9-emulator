@@ -1,5 +1,6 @@
 import { growPossibilities, numericStringToLetters,  } from './utils';
 import filterT9Predictions from '../filter';
+import { T9_HASH } from '../../../constants';
 
 /**
  * Converts a given numeric string into an array of T9 predictive text matches
@@ -14,8 +15,16 @@ import filterT9Predictions from '../filter';
  */
 const getT9Predictions = (input, filterOutUncommon = false) => {
   return Array.isArray(input)
-    ? null
+    ? getT9PredictionsForArrayInput(input, filterOutUncommon)
     : getT9PredictionsForNumericString(input, filterOutUncommon)
+}
+
+const getT9PredictionsForArrayInput = ([accumulatedWords, nextInput], filterOutUncommon = false) => {
+  const letterOptions = T9_HASH[nextInput]
+  const unfilteredPredictions = [letterOptions].reduce(growPossibilities, accumulatedWords)
+  return filterOutUncommon
+    ? filterT9Predictions(unfilteredPredictions)
+    : unfilteredPredictions
 }
 
 const getT9PredictionsForNumericString = (numericString, filterOutUncommon = false) => {
