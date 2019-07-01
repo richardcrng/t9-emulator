@@ -16,14 +16,14 @@ import { T9_HASH } from '../../../constants';
  * @return {string[]} An array of predictive text matches
  */
 const getT9Predictions = (input, filterOutUncommon = false) => {
-  const [letterOptions, initialAccumulator] = letterOptionsAndInitialAccumulator(input)
-  const unfilteredPredictions = letterOptions.reduce(growPossibilities, initialAccumulator)
+  const [possibilities, initialAccumulator] = possibilitiesAndInitialAccumulator(input)
+  const unfilteredPredictions = possibilities.reduce(growPossibilities, initialAccumulator)
   return filterOutUncommon
     ? filterT9Predictions(unfilteredPredictions)
     : unfilteredPredictions
 }
 
-const letterOptionsAndInitialAccumulator = input => (
+const possibilitiesAndInitialAccumulator = input => (
   Array.isArray(input)
     ? [[T9_HASH[input[1]]], input[0]]
     : [numericStringToLetters(input), []]
