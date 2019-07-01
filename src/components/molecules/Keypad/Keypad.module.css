@@ -1,0 +1,12 @@
+.KeypadInner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.KeypadOuter {
+  margin: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}

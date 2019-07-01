@@ -1,0 +1,4 @@
+.KeypadRow {
+  display: flex;
+  justify-content: space-between;
+}

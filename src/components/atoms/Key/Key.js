@@ -1,15 +1,18 @@
 import React from 'react';
+import classes from './Key.module.css';
 
 function Key({ n, letters }) {
   return (
-    <div>
-      <span>
-        {n}
+    <button className={classes.KeyOuter}>
+      <span className={classes.KeyInner}>
+        <span>
+          {n}
+        </span>
+        <span>
+          {letters}
+        </span>
       </span>
-      <span>
-        {letters}
-      </span>
-    </div>
+    </button>
   )
 }
 
