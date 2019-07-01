@@ -5,6 +5,7 @@ import { processKeyClick } from './redux/saga';
 
 function App() {
   const dispatch = useDispatch()
+  const filtering = useSelector(state => state.shouldFilter)
   const numericString = useSelector(state => state.numericString)
   const wordsArr = useSelector(state => state.shouldFilter ? state.filteredWords : state.unfilteredWords)
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <Phone
-      {...{ numericString, wordsArr }}
+      {...{ filtering, numericString, wordsArr }}
       onKeyClick={handleKeyClick}
     />
   );

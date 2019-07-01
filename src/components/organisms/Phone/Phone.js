@@ -1,14 +1,14 @@
 import React from 'react';
 import Display from '../../atoms/Display';
-import KeyPad from '../../molecules/KeyPad';
+import KeyPad from '../../atoms/KeyPad';
 
 const PhoneContext = React.createContext()
 export const usePhoneKeyClickHandler = () => React.useContext(PhoneContext).onKeyClick
 
-function Phone({ onKeyClick, numericString, wordsArr }) {
+function Phone({ onKeyClick, filtering, numericString, wordsArr }) {
   return (
     <PhoneContext.Provider value={{ onKeyClick }}>
-      <Display {...{ numericString, wordsArr }} />
+      <Display {...{ filtering, numericString, wordsArr }} />
       <KeyPad>
         {keyRows.map((keys, idx) => (
           <KeyPad.Row key={idx}>
