@@ -10,7 +10,7 @@ function Display({ numericString , wordsArr = [] }) {
       }}
     >
       <p>Input: {numericString}</p>
-      <p>Words: {wordsArr.join(', ')}</p>
+      <p>Words: {wordsArr.slice(0,11).join(', ')}</p>
     </div>
   )
 }
