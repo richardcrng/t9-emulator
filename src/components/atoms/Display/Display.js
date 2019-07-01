@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Display({ numericString = '4324', wordsArr = ['sample', 'words'] }) {
+function Display({ numericString , wordsArr = [] }) {
   return (
     <div
       style={{
