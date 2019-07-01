@@ -1,10 +1,10 @@
 import React from 'react';
-import Keypad from './components/molecules/Keypad/Keypad';
+import Phone from './components/organisms/Phone';
 
 function App() {
   return (
     <div className="App">
-      <Keypad />
+      <Phone />
     </div>
   );
 }

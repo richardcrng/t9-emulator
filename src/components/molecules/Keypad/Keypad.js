@@ -22,9 +22,9 @@ function Keypad() {
         <Key main={9} />
       </KeyRow>
       <KeyRow>
-        <Key main='*' />
+        <Key main='*' detail='CLR' />
         <Key main={0} />
-        <Key main='#' />
+        <Key main='#' detail='DEL' />
       </KeyRow>
     </div>
   )
