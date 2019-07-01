@@ -1,11 +1,5 @@
 import { growPossibilities, numericStringToLetters,  } from './utils';
 
-const fs = require('fs')
-const wordsRaw = fs.readFileSync(`${__dirname}/top10000words.txt`, 'utf-8')
-const wordsArr = wordsRaw.split('\n')
-
-console.log(wordsArr)
-
 /**
  * Converts a given numeric string into an array of T9 predictive text matches
  * 
