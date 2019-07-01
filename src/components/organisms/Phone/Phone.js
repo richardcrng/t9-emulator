@@ -10,29 +10,25 @@ function Phone({ onKeyClick, numericString, wordsArr }) {
     <PhoneContext.Provider value={{ onKeyClick }}>
       <Display {...{ numericString, wordsArr }} />
       <KeyPad>
-        <KeyPad.Row>
-          <KeyPad.Key main={1} />
-          <KeyPad.Key main={2} />
-          <KeyPad.Key main={3} />
-        </KeyPad.Row>
-        <KeyPad.Row>
-          <KeyPad.Key main={4} />
-          <KeyPad.Key main={5} />
-          <KeyPad.Key main={6} />
-        </KeyPad.Row>
-        <KeyPad.Row>
-          <KeyPad.Key main={7} />
-          <KeyPad.Key main={8} />
-          <KeyPad.Key main={9} />
-        </KeyPad.Row>
+        {keyRows.map((keys, idx) => (
+          <KeyPad.Row key={idx}>
+            {keys.map(key => (
+              <KeyPad.Key key={key} main={key} />
+            ))}
+          </KeyPad.Row>
+        ))}
+
+        {/* special buttons */}
         <KeyPad.Row>
           <KeyPad.Key main='*' detail='CLR' />
-          <KeyPad.Key main={0} />
+          <KeyPad.Key main={0} detail='TGL' />
           <KeyPad.Key main='#' detail='DEL' />
         </KeyPad.Row>
       </KeyPad>
     </PhoneContext.Provider>
   )
 }
+
+const keyRows = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 export default Phone;
