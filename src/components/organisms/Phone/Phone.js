@@ -2,10 +2,10 @@ import React from 'react';
 import Display from '../../atoms/Display';
 import Keypad from '../../molecules/Keypad/Keypad';
 
-function Phone() {
+function Phone({ numericString, wordsArr }) {
   return (
     <>
-      <Display />
+      <Display {...{ numericString, wordsArr }} />
       <Keypad />
     </>
   )
