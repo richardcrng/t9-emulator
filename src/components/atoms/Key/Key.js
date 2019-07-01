@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Key.module.css';
+import { T9_HASH } from '../../../constants/index';
 
 function Key({ main, detail }) {
   return (
@@ -9,7 +10,7 @@ function Key({ main, detail }) {
           {main}
         </span>
         <span>
-          {detail}
+          {detail || T9_HASH[main]}
         </span>
       </span>
     </button>
