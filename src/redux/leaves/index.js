@@ -1,8 +1,8 @@
 import reduxLeaves from 'redux-leaves';
 
 const initialState = {
-  numericString: '4354636',
-  wordsArr: ['we', 'gregre', 'we']
+  numericString: '',
+  wordsArr: []
 }
 
 const [reducer, actions] = reduxLeaves(initialState)
