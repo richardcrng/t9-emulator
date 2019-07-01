@@ -8,8 +8,9 @@
 }
 
 .KeyOuter {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
+  margin: 2px;
   background-color: white;
   color: black;
   display: inline-block;
