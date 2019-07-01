@@ -1,6 +1,6 @@
 import React from 'react';
 import Display from '../../atoms/Display';
-import KeyPad from '../../molecules/KeyPad';
+import KeyPad from '../../atoms/KeyPad';
 
 const PhoneContext = React.createContext()
 export const usePhoneKeyClickHandler = () => React.useContext(PhoneContext).onKeyClick
