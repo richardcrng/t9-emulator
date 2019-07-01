@@ -1,9 +1,4 @@
-.KeypadInner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.KeypadOuter {
+.Keypad {
   margin: 20px;
   display: flex;
   flex: 1;

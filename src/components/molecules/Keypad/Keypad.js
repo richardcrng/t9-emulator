@@ -5,7 +5,7 @@ import KeyRow from '../KeyRow';
 
 function Keypad() {
   return (
-    <div className={classes.KeypadOuter}>
+    <div className={classes.Keypad}>
       <KeyRow>
         <Key n={1} />
         <Key n={2} />
