@@ -29,12 +29,7 @@ const getT9Predictions = numericString => {
  * @return {String[]} Array of predictions augmented from prediction via lettersArr 
  */
 const augmentPrediction = (lettersArr, prediction) => (
-  lettersArr.reduce(
-    (accumulatedPredictions, letter) => {
-      return [...accumulatedPredictions, `${prediction}${letter}`]
-    },
-    []
-  )
+  lettersArr.map(letter => `${prediction}${letter}`)
 )
 
 export default getT9Predictions;
