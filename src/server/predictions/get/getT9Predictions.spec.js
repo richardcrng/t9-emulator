@@ -2,7 +2,7 @@ import getT9Predictions from ".";
 import { augmentPrediction } from "./getT9Predictions";
 
 describe("getT9Predictions", () => {
-  describe.skip("GIVEN the input '23'", () => {
+  describe("GIVEN the input '23'", () => {
     const input = '23'
 
     describe("WHEN we pass the input to getT9Predictions", () => {
