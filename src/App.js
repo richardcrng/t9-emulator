@@ -6,7 +6,7 @@ import { processKeyClick } from './redux/saga';
 function App() {
   const dispatch = useDispatch()
   const numericString = useSelector(state => state.numericString)
-  const wordsArr = useSelector(state => state.wordsArr)
+  const wordsArr = useSelector(state => state.unfilteredWords)
 
   const handleKeyClick = key => dispatch(processKeyClick.trigger(key))
 

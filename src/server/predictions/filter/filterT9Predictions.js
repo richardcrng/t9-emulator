@@ -1,6 +1,6 @@
-const fs = require('fs')
-const wordsRaw = fs.readFileSync(`${__dirname}/top10000words.txt`, 'utf-8')
-const wordsArr = wordsRaw.split('\n')
+import top10000words from "./top10000words";
+
+const wordsArr = top10000words.split('\n')
 
 const filterT9Predictions = arr => arr.filter(str => wordsArr.includes(str))
 

@@ -2,7 +2,9 @@ import reduxLeaves from 'redux-leaves';
 
 const initialState = {
   numericString: '',
-  wordsArr: []
+  unfilteredWords: [],
+  filteredWords: [],
+  shouldFilter: true
 }
 
 const [reducer, actions] = reduxLeaves(initialState)
