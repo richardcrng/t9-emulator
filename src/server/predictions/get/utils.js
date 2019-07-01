@@ -14,6 +14,15 @@ export const augmentPrediction = _.curry((lettersArr, prediction) => (
   lettersArr.map(letter => `${prediction}${letter}`)
 ))
 
+/**
+ * Grows the accumulated possibilities by flatMapping each through the lettersArr
+ * 
+ * @param {String[]} accumulatedPossibilities - An array which holds all the
+ *   possibilities / predictions accumulated so far
+ * @param {String[]} lettersArr - An array of letters that are possibilities
+ *   for the last press
+ * @return {String[]} An array of grown possibilities
+ */
 export const growPossibilities = (accumulatedPossibilities, lettersArr) => {
   // if no accumulated possibilities, then there are no possibilities to grow
   //    - so return the lettersArr as the only possibilities for now
@@ -30,7 +39,7 @@ export const growPossibilities = (accumulatedPossibilities, lettersArr) => {
  * where each element is an array of letters
  * 
  * @param {String} numericString 
- * @returns {Array.<string[]>}
+ * @returns {Array.<String[]>}
  */
 export const numericStringToLetters = numericString => {
   const numbersPressed = numericString.split('')
