@@ -3,7 +3,9 @@ import filterT9Predictions from '../filter';
 import { T9_HASH } from '../../../constants';
 
 /**
- * Converts a given numeric string into an array of T9 predictive text matches
+ * Converts a given input into an array of T9 predictive text matches.
+ * Input can be a numeric string or an array (as detailed below) -
+ * prefer the array as it is more efficient.
  * 
  * @param {string | [string[], string]} input - either:
  *    (a) a string of numeric input to convert into T9, e.g. '23'; or
