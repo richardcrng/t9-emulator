@@ -11,7 +11,8 @@ import { T9_HASH } from '../../../constants';
  * @return {String[]} Array of predictions augmented from prediction via lettersArr 
  */
 export const augmentPrediction = _.curry((lettersArr, prediction) => (
-  lettersArr.map(letter => `${prediction}${letter}`)
+  // use lodash's map as it's safer
+  _.map(lettersArr, letter => `${prediction}${letter}`)
 ))
 
 /**

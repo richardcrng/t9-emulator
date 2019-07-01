@@ -13,10 +13,7 @@ function Key({ main, detail }) {
     >
       <span className={classes.KeyInner}>
         <span>
-          {main}
-        </span>
-        <span>
-          {detail || T9_HASH[main]}
+          {`${main} ${detail || T9_HASH[main]  || ''}`}
         </span>
       </span>
     </button>

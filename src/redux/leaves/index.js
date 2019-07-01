@@ -7,7 +7,11 @@ const initialState = {
   shouldFilter: true
 }
 
-const [reducer, actions] = reduxLeaves(initialState)
+const reducersDict = {
+  slice: (state, { payload }) => state.slice(payload[0], payload[1])
+}
+
+const [reducer, actions] = reduxLeaves(initialState, reducersDict)
 
 export {
   reducer,
