@@ -47,10 +47,10 @@ describe("getT9Predictions for numeric string input", () => {
 })
 
 describe("getT9Predictions for array input", () => {
-  describe("GIVEN the input [['a', 'b', 'c'], '3']", () => {
+  describe("GIVEN the input ['3', ['a', 'b', 'c']]", () => {
     const input = [
-      ['a', 'b', 'c'],
-      '3'
+      '3',
+      ['a', 'b', 'c']
     ]
 
     describe("WHEN we pass the input to getT9Predictions", () => {
@@ -64,10 +64,10 @@ describe("getT9Predictions for array input", () => {
     })
   })
 
-  describe("GIVEN the input [['aa', 'ab', 'ac', 'ba', 'bb', 'bc', 'ca', 'cb', 'cc'],'8']", () => {
+  describe("GIVEN the input ['8', ['aa', 'ab', 'ac', 'ba', 'bb', 'bc', 'ca', 'cb', 'cc']]", () => {
     const input = [
-      ['aa', 'ab', 'ac', 'ba', 'bb', 'bc', 'ca', 'cb', 'cc'],
-      '8'
+      '8',
+      ['aa', 'ab', 'ac', 'ba', 'bb', 'bc', 'ca', 'cb', 'cc']
     ]
 
     describe("WHEN we pass the input to getT9Predictions and don't filter", () => {
