@@ -1,5 +1,5 @@
 import getT9Predictions from ".";
-import { augmentPrediction } from "./getT9Predictions";
+import { augmentPrediction } from "./utils";
 
 describe("getT9Predictions", () => {
   describe("GIVEN the input '23'", () => {
