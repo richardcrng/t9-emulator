@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Keypad.module.css'
 import Key from '../../atoms/Key';
-import KeyRow from '../KeyRow';
+import KeyRow from '../../atoms/KeyRow';
 
 function Keypad() {
   return (
