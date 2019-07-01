@@ -1,7 +1,6 @@
 import getT9Predictions from ".";
-import { augmentPrediction } from "./utils";
 
-describe("getT9Predictions", () => {
+describe("getT9Predictions: provides array of predictions given a numeric input", () => {
   describe("GIVEN the input '23'", () => {
     const input = '23'
 
@@ -15,23 +14,33 @@ describe("getT9Predictions", () => {
       })
     })
   })
-})
 
-describe("augmentPredictions", () => {
-  describe("GIVEN an array of letters to follow, ['d', 'e', 'f']", () => {
-    const lettersArr = ['d', 'e', 'f']
+  describe("GIVEN the input '228'", () => {
+    const input = '228'
 
-    describe("AND an existing prediction, 'a'", () => {
-      const prediction = 'a'
+    describe("WHEN we pass the input to getT9Predictions and don't filter", () => {
+      const result = getT9Predictions(input)
 
-      describe("WHEN augmentPredictions is called with these two arguments", () => {
-        const result = augmentPrediction(lettersArr, prediction)
+      test("THEN it returns an unfiltered array", () => {
+        expect(result).toEqual([
+          'aat', 'aau', 'aav',
+          'abt', 'abu', 'abv',
+          'act', 'acu', 'acv',
+          'bat', 'bau', 'bav',
+          'bbt', 'bbu', 'bbv',
+          'bct', 'bcu', 'bcv',
+          'cat', 'cau', 'cav',
+          'cbt', 'cbu', 'cbv',
+          'cct', 'ccu', 'ccv'
+        ])
+      })
+    })
 
-        test("THEN the result is ['ad', 'ae', 'af']", () => {
-          expect(result).toEqual([
-            'ad', 'ae', 'af'
-          ])
-        })
+    describe("WHEN we pass the input to getT9Predictions and filter", () => {
+      const result = getT9Predictions(input, true)
+
+      test("THEN it returns a filtered array", () => {
+        expect(result).toEqual(['abu', 'act', 'bat', 'cat'])
       })
     })
   })
