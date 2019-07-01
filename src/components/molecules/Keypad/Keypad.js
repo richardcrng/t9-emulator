@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from './Keypad.module.css'
 import Key from '../../atoms/Key';
 
 function Keypad() {
   return (
-    <div>
+    <div className={classes.Keypad}>
       <div>
         <Key n={1} />
         <Key n={2} />
