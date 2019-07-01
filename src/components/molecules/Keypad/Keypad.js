@@ -1,10 +1,9 @@
 import React from 'react';
-import classes from './Keypad.module.css'
 import Key from '../../atoms/Key';
 
 function Keypad() {
   return (
-    <div className={classes.Keypad}>
+    <div className='d-flex justify-content-between'>
       <div>
         <Key n={1} />
         <Key n={2} />
