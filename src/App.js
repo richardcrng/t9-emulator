@@ -1,11 +1,20 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Phone from './components/organisms/Phone';
+import { processKeyClick } from './redux/saga';
 
 function App() {
+  const dispatch = useDispatch()
+  const numericString = useSelector(state => state.numericString)
+  const wordsArr = useSelector(state => state.unfilteredWords)
+
+  const handleKeyClick = key => dispatch(processKeyClick.trigger(key))
+
   return (
-    <div className="App">
-      <Phone />
-    </div>
+    <Phone
+      {...{ numericString, wordsArr }}
+      onKeyClick={handleKeyClick}
+    />
   );
 }
 

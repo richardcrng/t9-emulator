@@ -1,4 +1,4 @@
-the
+const top10000words = `the
 of
 and
 to
@@ -9894,4 +9894,6 @@ varieties
 arbor
 mediawiki
 configurations
-poison
+poison`
+
+export default top10000words
