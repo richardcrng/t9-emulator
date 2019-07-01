@@ -5,8 +5,8 @@ import filterT9Predictions from '../../server/predictions/filter';
 
 export function* processKeyClick({ payload: key }) {
   yield put(actions.numericString.create.concat(`${key}`))
-  const currString = yield select(state => state.numericString)
-  const unfilteredArr = yield call(server.predictions.get, currString)
+  const prevUnfilteredArr = yield select(state => state.unfilteredWords)
+  const unfilteredArr = yield call(server.predictions.get, [key, prevUnfilteredArr])
   const filteredArr = yield call(filterT9Predictions, unfilteredArr)
   yield all([
     put(actions.unfilteredWords.create.update(unfilteredArr)),
