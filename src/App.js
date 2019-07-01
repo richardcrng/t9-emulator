@@ -10,10 +10,9 @@ function App() {
   const wordsArr = useSelector(state => state.wordsArr)
 
   const handleKeyClick = key => {
-    dispatch(actions.numericString.create.concat(`${key}`))
-    const associatedLetters = T9_HASH
-    if (T9_HASH) {
-      
+    const associatedLetters = T9_HASH[key]
+    if (associatedLetters) {
+      dispatch(actions.numericString.create.concat(`${key}`))      
     }
   }
 
