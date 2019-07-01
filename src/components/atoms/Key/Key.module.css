@@ -1,0 +1,19 @@
+.KeyInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 18px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.KeyOuter {
+  height: 80px;
+  width: 80px;
+  margin: 2px;
+  background-color: white;
+  color: black;
+  display: inline-block;
+  justify-content: center;
+  cursor: pointer;
+}
