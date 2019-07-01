@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './Keypad.module.css'
+import classes from './KeyPad.module.css'
 import Key from '../../atoms/Key';
 import KeyRow from '../../atoms/KeyRow';
 
-function Keypad() {
+function KeyPad() {
   return (
-    <div className={classes.Keypad}>
+    <div className={classes.KeyPad}>
       <KeyRow>
         <Key main={1} />
         <Key main={2} />
@@ -30,4 +30,4 @@ function Keypad() {
   )
 }
 
-export default Keypad;
+export default KeyPad;
