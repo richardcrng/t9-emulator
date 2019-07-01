@@ -9,16 +9,7 @@ import { T9_HASH } from '../../../constants';
  */
 const getT9Predictions = numericString => {
   const lettersOptions = numericStringToLetters(numericString)
-  return lettersOptions.reduce(
-    (accumulatedPossibilities, lettersArr) => {
-      if (accumulatedPossibilities.length === 0) return lettersArr
-      return _.flatMap(
-        accumulatedPossibilities,
-        possibility => augmentPrediction(lettersArr, possibility)
-      )
-    },
-    []
-  )
+  return lettersOptions.reduce(growPossibilities, [])
 }
 
 const growPossibilities = (accumulatedPossibilities, lettersArr) => {
