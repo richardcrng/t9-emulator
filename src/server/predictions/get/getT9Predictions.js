@@ -6,7 +6,7 @@ import _ from 'lodash';
  * @param {String} numericString - A string of numeric input to convert into T9, e.g. '23'
  * @return {String[]} An array of predictive text matches
  */
-function getT9Predictions(numericString) {
+const getT9Predictions = numericString => {
   const inputNums = numericString.split('')
   return inputNums.reduce(
     (accumulatedPredictions, currentInputNum) => {
