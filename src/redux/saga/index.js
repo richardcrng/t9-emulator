@@ -1,7 +1,8 @@
-import { takeEvery } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
+import { actions } from '../leaves';
 
 export function* processKeyClick({ payload: key }) {
-  console.log(key)
+  yield put(actions.numericString.create.concat(`${key}`))
 }
 
 processKeyClick.TRIGGER = 'TRIGGER_SAGA: processKeyClick'
