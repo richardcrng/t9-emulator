@@ -10,6 +10,7 @@ A number to word list converter built with React and Redux.
 - Pressing the `#` or `DEL` key will backspace the input
 - Pressing the `0` or `TGL` key will toggle a filter on/off
   - If the filter is on, all 'words' that do not appear in this [list of top 10,000 most common English words](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) will be filtered out
+- Input can also be entered through a physical keyboard
 
 ## Getting Started
 

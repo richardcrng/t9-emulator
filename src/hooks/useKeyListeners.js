@@ -14,7 +14,6 @@ import { useEffect } from 'react'
  */
 function useKeyListeners(targetKey, { onKeyDown = R.identity, onKeyUp = R.identity }, dependencies) {
   const downHandler = ({ key }) => {
-    console.log('handling', key)
     if (key === targetKey) onKeyDown()
   }
 
