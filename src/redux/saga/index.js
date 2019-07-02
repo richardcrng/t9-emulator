@@ -10,11 +10,9 @@ export function* processKeyClick({ payload: key }) {
   yield put(actions.numericString.create.concat(`${key}`))
   const prevUnfilteredArr = yield select(state => state.unfilteredWords)
   const unfilteredArr = yield call(server.predictions.get, [key, prevUnfilteredArr])
+  yield put(actions.unfilteredWords.create.update(unfilteredArr))
   const filteredArr = yield call(filterT9Predictions, unfilteredArr)
-  yield all([
-    put(actions.unfilteredWords.create.update(unfilteredArr)),
-    put(actions.filteredWords.create.update(filteredArr))
-  ])
+  yield put(actions.filteredWords.create.update(filteredArr))
 }
 
 processKeyClick.TRIGGER = 'TRIGGER_SAGA: processKeyClick'
