@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import { useEffect } from 'react'
 
-// Based on from https://usehooks.com/useKeyPress/
+// Based from https://usehooks.com/useKeyPress/
 
 /**
  * Use keydown and/or keyup listeners for the target key
