@@ -25,7 +25,7 @@ const getT9Predictions = (input, filterOutUncommon = false) => {
 
 const possibilitiesAndInitialAccumulator = input => (
   Array.isArray(input)
-    ? [[T9_HASH[input[0]]], input[1]]       // to fit the return 
+    ? [[T9_HASH[input[0]]], input[1]]       // to fit the return format of numericStringToLetters
     : [numericStringToLetters(input), []]
 )
 
