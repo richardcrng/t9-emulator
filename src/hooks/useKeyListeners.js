@@ -10,9 +10,8 @@ import { useEffect } from 'react'
  * @param {Object} handlers
  * @param {function} handlers.onKeyDown - Callback to trigger on keydown event
  * @param {function} handlers.onKeyUp - Callback to trigger on keyup event
- * @param {Array} dependencies - Array of effect dependencies 
  */
-function useKeyListeners(targetKey, { onKeyDown = R.identity, onKeyUp = R.identity }, dependencies) {
+function useKeyListeners(targetKey, { onKeyDown = R.identity, onKeyUp = R.identity }) {
   const downHandler = ({ key }) => {
     if (key === targetKey) onKeyDown()
   }
@@ -30,7 +29,7 @@ function useKeyListeners(targetKey, { onKeyDown = R.identity, onKeyUp = R.identi
       window.removeEventListener('keydown', downHandler);
       window.removeEventListener('keyup', upHandler);
     };
-  }, dependencies)
+  })
 }
 
 export default useKeyListeners
